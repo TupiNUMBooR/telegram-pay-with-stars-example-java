@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: tg-pay-stars-example
+  main:
+    web-application-type: NONE
+
+telegram:
+  bot:
+    username: ${TELEGRAM_BOT_USERNAME}
+    token: ${TELEGRAM_BOT_TOKEN}
+    debug_chat: ${TELEGRAM_DEBUG_CHAT_ID}
