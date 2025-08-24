@@ -12,11 +12,9 @@ import org.telegram.abilitybots.api.objects.Ability;
 import org.telegram.abilitybots.api.objects.MessageContext;
 import org.telegram.telegrambots.meta.TelegramBotsApi;
 import org.telegram.telegrambots.meta.api.methods.AnswerPreCheckoutQuery;
-import org.telegram.telegrambots.meta.api.methods.invoices.SendInvoice;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Message;
 import org.telegram.telegrambots.meta.api.objects.Update;
-import org.telegram.telegrambots.meta.api.objects.payments.LabeledPrice;
 import org.telegram.telegrambots.meta.api.objects.payments.PreCheckoutQuery;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 import org.telegram.telegrambots.updatesreceivers.DefaultBotSession;
@@ -180,21 +178,21 @@ public class Bot extends AbilityBot {
     /**
      * Send invoice for 1 star (XTR). Amount is in "cents": 1⭐ == 20.
      */
-@SneakyThrows
-private void sendStarsInvoice(Long chatId) {
-    List<LabeledPrice> prices = List.of(new LabeledPrice("Letter pack +20", 20)); // 20 = 1 star
-
-    SendInvoice inv = new SendInvoice();
-    inv.setChatId(chatId.toString());
-    inv.setTitle("Top up letters");
-    inv.setDescription("1⭐ = +20 letters. Instant, inside Telegram.");
-    inv.setPayload("letters_pack_20");
-    inv.setStartParameter("buy_letters");
-    inv.setCurrency("XTR");     // Telegram Stars currency for digital goods
-    inv.setPrices(prices);
-
-    execute(inv);
-}
+//    @SneakyThrows
+//    private void sendStarsInvoice(Long chatId) {
+//        List<LabeledPrice> prices = List.of(new LabeledPrice("Letter pack +20", 20)); // 20 = 1 star
+//
+//        SendInvoice inv = new SendInvoice();
+//        inv.setChatId(chatId.toString());
+//        inv.setTitle("Top up letters");
+//        inv.setDescription("1⭐ = +20 letters. Instant, inside Telegram.");
+//        inv.setPayload("letters_pack_20");
+//        inv.setStartParameter("buy_letters");
+//        inv.setCurrency("XTR");     // Telegram Stars currency for digital goods
+//        inv.setPrices(prices);
+//
+//        execute(inv);
+//    }
 
     /**
      * Send invoice for 1⭐ (XTR)
