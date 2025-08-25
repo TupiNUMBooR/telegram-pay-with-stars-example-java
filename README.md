@@ -1,3 +1,10 @@
 A simple telegram bot that accept stars payment
 
-Sorry for my shitty code 😅😅
+Warning - shitty code 😅😅
+
+TODO:
+
+- [ ] normal readme
+- [ ] refactor code
+- [ ] idempotentify payments
+- [ ] nodejs analog
